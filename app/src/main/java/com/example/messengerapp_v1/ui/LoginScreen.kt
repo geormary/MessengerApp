@@ -21,7 +21,7 @@ import androidx.navigation.NavHostController
 import com.example.messengerapp_v1.ui.theme.MessengerApp_V1Theme
 
 @Composable
-fun LoginScreen(navController: NavHostController): NavController {
+fun LoginScreen(navController: NavHostController){
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -96,10 +96,10 @@ fun LoginScreen(navController: NavHostController): NavController {
     }
 }
 // Add this Preview function below your composable function
-@Preview(showBackground = true)
-@Composable
-fun LoginScreenPreview() {
-    MessengerApp_V1Theme() {
-        LoginScreen(navController) // Call the RegisterScreen composable to preview
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun LoginScreenPreview() {
+//    MessengerApp_V1Theme() {
+//        LoginScreen(navController) // Call the RegisterScreen composable to preview
+//    }
+//}
