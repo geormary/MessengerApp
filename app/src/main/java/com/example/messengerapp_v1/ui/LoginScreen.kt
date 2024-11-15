@@ -16,10 +16,12 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.messengerapp_v1.ui.theme.MessengerApp_V1Theme
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavHostController): NavController {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -98,6 +100,6 @@ fun LoginScreen() {
 @Composable
 fun LoginScreenPreview() {
     MessengerApp_V1Theme() {
-        LoginScreen() // Call the RegisterScreen composable to preview
+        LoginScreen(navController) // Call the RegisterScreen composable to preview
     }
 }

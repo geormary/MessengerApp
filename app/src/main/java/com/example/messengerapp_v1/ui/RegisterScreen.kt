@@ -1,6 +1,7 @@
 package com.example.messengerapp_v1.ui
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
@@ -15,10 +16,12 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.messengerapp_v1.ui.theme.MessengerApp_V1Theme
 
+
 @Composable
-fun RegisterScreen() {
+fun RegisterScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -106,14 +109,17 @@ fun RegisterScreen() {
             ),
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
+                .clickable { navController.navigate("login") }
         )
     }
 }
+
+
 // Add this Preview function below your composable function
 @Preview(showBackground = true)
 @Composable
-fun RegisterScreenPreview() {
+fun RegisterScreenPreview(navController: NavController) {
     MessengerApp_V1Theme() {
-        RegisterScreen() // Call the RegisterScreen composable to preview
+        RegisterScreen(navController) // Call the RegisterScreen composable to preview
     }
 }
