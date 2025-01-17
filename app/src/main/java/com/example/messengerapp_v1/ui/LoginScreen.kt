@@ -1,13 +1,16 @@
 package com.example.messengerapp_v1.ui
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -26,12 +29,14 @@ fun LoginScreen(navController: NavHostController){
         modifier = Modifier
             .fillMaxSize()
             .padding(32.dp)
-            .background(color=Color(0xFF8BC34A)),
+            .background(color = Color(0xFF8BC34A)),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top,
 
         ) {
         Spacer(modifier = Modifier.height(8.dp))
+        // User Circle
+        var userIcon by remember { mutableStateOf("") }
 
         // Email TextField
         var email by remember { mutableStateOf("") }
@@ -81,7 +86,7 @@ fun LoginScreen(navController: NavHostController){
 
         Spacer(modifier = Modifier.height(8.dp))
 
-//        // Don't have an account Text
+        // Don't have an account Text
         Text(
             text = "Don't have an account?",
             style = TextStyle(
@@ -91,7 +96,7 @@ fun LoginScreen(navController: NavHostController){
             ),
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
-                .clickable {  }
+                .clickable { }
         )
     }
 }
